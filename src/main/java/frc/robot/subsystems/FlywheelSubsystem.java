@@ -15,7 +15,6 @@ public class FlywheelSubsystem extends SubsystemBase {
         return encoder.getVelocity();
     }
 
-    // Method to set the shooter by voltage
     public void set(double volts) {
         motor.setVoltage(volts);
     }
