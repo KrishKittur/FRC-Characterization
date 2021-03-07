@@ -51,7 +51,7 @@ public class DataParser {
         ArrayList<Double> slopes = new ArrayList<>();
         for (int i=0; i<data.size() - 1; i++) {
             double acceleration = (data.get(i + 1)[0] - data.get(i)[0])/(data.get(i + 1)[2] - data.get(i)[2]);
-            if (acceleration != 0) {
+            if (acceleration != 0 && acceleration > 0.0 && (data.get(i)[1] - ((kv * data.get(i)[0]) + ks))/acceleration > 0.0) {
                 slopes.add((data.get(i)[1] - ((kv * data.get(i)[0]) + ks))/acceleration);
             }
         }
